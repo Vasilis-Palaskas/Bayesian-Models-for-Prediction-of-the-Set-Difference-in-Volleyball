@@ -1,0 +1,99 @@
+This folder contains all the readable R and Stan codes required to   
+replicate the results (Tables, Figures) of the paper "Bayesian Models for Prediction of Volleyball Set Differences", by Vasilis Palaskas, Ioannis Ntzoufras 
+and Sotirios Drikos (AUEB Sports Analytics Group). The paper is available at  https://arxiv.org/abs/1911.04541.
+
+The current R and Stan codes for the paper are always available in the Github folders: 
+https://github.com/Vasilis-Palaskas/Bayesian-Models-for-Prediction-of-Volleyball-Set-Differences/ 
+.
+
+
+## DATA DESCRIPTION 
+
+The data of the paper consider all games of  the Greek Volleyball League for the regular season 2016/17 and 
+are available at the file "Final_Regular_Season_data.csv", whereas data about for  
+the playoff phase were recorded manually from http://www.volleyleague.gr/index.php/season/2016-17/play-off-1-8.  
+All data have been collected by the third author of this manuscript, Dr. Sotiris Drikos (University of Athens). 
+
+Each row of the data refers to a specific match set of each match (set-by-set). The file contains the following variables/features:
+
+ - day : match day 
+
+ - home-away teams: names of home and away teams for each match set
+
+ - points: number of points in each match set
+
+ - skills: skill events of the home and away teams in each match set 
+ 
+ Data manipulation via an R code ("Data_Preparation") was implemented so each row refers to a specific match (match-by-match). 
+
+ ## HOW TO RUN THE CODE 
+
+ R and Stan codes needed for fitting both models as well as for the replication of all paper results  
+are provided in separate folders (R and Stan codes), respectively. 
+
+
+All R folders are named and numbered according to the sections they refer to. For instance, R folder for the prior sensitivity analysis  
+in Section 3.2 is named: "3.2-Prior Sensitivity analysis". 
+Concerning the Stan codes, the user can load them via rstan function in R. 
+
+Caution: During the running of several R codes, requests for file selection (via load and source commands) will be emerged. The files required in each file selection  
+are mentioned as comments at each file selection syntax. 
+
+Now, we present the list of folders in detail. The folders are sorted according to the same order with the order the results are printed on the paper.  
+
+
+1) Folder “1-Data_Preparation”: data acquisition and data cleaning procedures.  
+
+2) Folder “2.3-Linear_relationship_EZDTS_ESk”: R code related to the Figure 1. 
+
+3) Folder “2.4-Computational_implementation_posterior”: R code for fitting of both models. During their implementation, user will be requested to run Bayesian models  
+   via function rstan by choosing the Stan codes corresponding to these models. 
+
+4) Folder “3.2-Prior_Sensitivity_analysis”: Run the R file "Table_2" in order to extract the results of Table 2. 
+   During the specific code implementation, the user will be requested to run the separate R files (via the source function) regarding the 
+   sensitivity analysis of parameters home, mu, and both attacking and defending parameters, respectively. 
+   
+5) Folder “3.3-MCMC_Convergence_Diagnostics”: R codes for the replication of several MCMC diagnostics. 
+
+6) Folder “4.1-Posterior_analysis_interpretation": R codes refer to the results of Tables 3, 4,Figures 2, 3, 4 as well as the covariate effect interpretation for the ZDTS model
+ (more detailed description of this issue in Electronic Appendix/ Appendix C). 
+
+7) Folder “4.3-Goodness_of_fit_model_comparison”: Run the R files  
+    “Table_6-In_Sample_Comparison_MAD.r”  and  
+     “Figure_5-PPC_Bars_Comparison.R”   in order to extract the GOF measures of  Table 6 and Figure 5, respectively.  
+   During these codes implementation, the user will be requested to run the R files "In_Sample_ordered.r" and "In_Sample_ZDTS.r", respectively.
+
+8) Folder “4.4-Out_of_sample_prediction_Mid_Season_Analysis”: Run the file:  “ Out_of_Sample_Sample_Comparison_MAD (Table 7).R”   
+   in order to obtain the  mid-season out-of-sample prediction results of Table 7.  During this code implementation, the user will be requested to run the R files
+   "Out_of_Sample_Ordered.r" and "Out_of_Sample_ZDTS.r", respectively.  
+
+    
+9) Folder “4.5-Out_of_sample_prediction_Play_offs_Analysis”: Run the file: “Table_8.r" in order to obtain the play-off prediction results. 
+  As in the file of Section/Folder 4.4, the user will be requested to run the R files related to each play-offs phase prediction for each model.  
+
+10) Folder “4.6-Bayesian_Model_Comparison_Bayesian_Information_Criteria”: Model comparison based on WAIC and LOOIC Bayesian information criteria (Table 9). 
+
+## NOTES 
+
+Bayesian models are fitted via Stan probabilistic programming language. So, install Stan to your computer. 
+The required R libraries for our analysis, which should be installed and loaded by users, are the following ones: 
+
+skellam
+ggplot2
+rstan (Bayesian model fitting) 
+shinystan 
+bayesplot 
+loo
+MASS
+gridExtra
+xtable
+plyr
+coda
+latex2exp
+shape
+ggpubr
+
+
+   
+
+

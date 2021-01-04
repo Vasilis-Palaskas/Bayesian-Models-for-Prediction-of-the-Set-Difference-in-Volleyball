@@ -44,7 +44,7 @@ data<-data.frame(expec_value_used=expec_value_used,expec_value_zdts=expec_value_
 
 p <- ggplot(data = data, aes(x = expec_value_used, y = expec_value_zdts)) +
             geom_smooth(method = "lm", se=FALSE, color="red", formula = y ~ x) +
-            geom_point(color="blue")+scale_x_continuous(name = "E(Æ_Sk)") +
+            geom_point(color="blue")+scale_x_continuous(name = "E(Z_Sk)") +
       scale_y_continuous(name = "E(Z_ZDTS)") 
 p1 <- p + geom_text(x = -1.5, y = 2, label = lm_eqn(data), parse = TRUE,size=6)+
   theme(axis.text.x = element_text( size = 13, angle = 0, hjust = .5, vjust = .5),

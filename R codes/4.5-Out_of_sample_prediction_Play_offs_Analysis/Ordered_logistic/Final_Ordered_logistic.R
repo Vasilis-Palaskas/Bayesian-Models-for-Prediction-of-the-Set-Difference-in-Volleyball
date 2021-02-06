@@ -45,8 +45,8 @@ semi_train_away_sets<-c(0,0,3,2,0,3)
 
 train_dataList_new<-list(n_teams=12,n_games=length(datafr_teams_scores_set_win$home_Team)+length(quarter_train_home_sets)+length(semi_train_home_sets),
 				dif_sets=c(datafr_teams_scores_set_win$home_score-datafr_teams_scores_set_win$away_score,quarter_train_home_sets-quarter_train_away_sets,semi_train_home_sets-semi_train_away_sets),
-				home_team=c(as.numeric(datafr_teams_scores_set_win$home_Team),quarter_train_home_team,semi_train_home_team),
-                   away_team=c(as.numeric(datafr_teams_scores_set_win$away_Team),quarter_train_away_team,semi_train_home_team))
+				home_team=as.numeric(factor(datafr_teams_scores_set_win$home_Team)),
+				away_team=as.numeric(factor(datafr_teams_scores_set_win$away_Team)),quarter_train_away_team,semi_train_home_team)
 
 #######---------- Proper recoding of response variable (ordinality) in both training and test sets
 for (i in 1:train_dataList_new$n_games) {

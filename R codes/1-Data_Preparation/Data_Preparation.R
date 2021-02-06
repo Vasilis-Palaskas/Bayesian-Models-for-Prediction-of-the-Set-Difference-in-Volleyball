@@ -222,3 +222,4 @@ for (i in 1:length(home_Team)){
 
 datafr_teams_scores_set_win<-data.frame(datafr_teams_scores_set,team_win=win_team_match,
 bin_result=match_set_result)
+

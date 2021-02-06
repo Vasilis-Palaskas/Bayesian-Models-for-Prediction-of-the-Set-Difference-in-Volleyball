@@ -43,8 +43,8 @@ quarter_train_away_sets<-c(0,1,0,1,3,3,2,0,2)
 train_dataList<-list(n_teams=12,n_games=length(datafr_teams_scores_set_win$home_score)+length(quarter_train_away_sets),
                      home_sets=c(datafr_teams_scores_set_win$home_score,quarter_train_home_sets),
                      away_sets=c(datafr_teams_scores_set_win$away_score,quarter_train_away_sets),
-                     home_team=c(as.numeric(datafr_teams_scores_set_win$home_Team),quarter_train_home_team),
-                     away_team=c(as.numeric(datafr_teams_scores_set_win$away_Team),quarter_train_away_team))
+                     home_team=c(as.numeric(factor(datafr_teams_scores_set_win$home_Team)),quarter_train_home_team),
+                     away_team=c(as.numeric(factor(datafr_teams_scores_set_win$away_Team)),quarter_train_away_team))
 
 
 

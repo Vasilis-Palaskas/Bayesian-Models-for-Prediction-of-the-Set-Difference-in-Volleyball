@@ -30,19 +30,19 @@ teams_names_pos
 teams_names_points
 teams_names
 
-##---- Datalist for the out-of-sample prediction of the second halö of the mid-season---###
+##---- Datalist for the out-of-sample prediction of the second hal? of the mid-season---###
 
 train_dataList<-list(n_teams=12,n_games=length(datafr_teams_scores_set_win$home_Team)/2,
 home_sets=datafr_teams_scores_set_win$home_score[1:(length(datafr_teams_scores_set_win$home_Team)/2)],
 away_sets=datafr_teams_scores_set_win$away_score[1:(length(datafr_teams_scores_set_win$home_Team)/2)],
-home_team=as.numeric(datafr_teams_scores_set_win$home_Team[1:(length(datafr_teams_scores_set_win$home_Team)/2)]),
-away_team=as.numeric(datafr_teams_scores_set_win$away_Team[1:(length(datafr_teams_scores_set_win$home_Team)/2)]))
+home_team=as.numeric(factor(datafr_teams_scores_set_win$home_Team[1:(length(datafr_teams_scores_set_win$home_Team)/2)])),
+away_team=as.numeric(factor(datafr_teams_scores_set_win$away_Team[1:(length(datafr_teams_scores_set_win$home_Team)/2)])))
 
 test_dataList<-list(n_teams=12,n_games=length(datafr_teams_scores_set_win$home_Team)/2,
 home_sets=datafr_teams_scores_set_win$home_score[((length(datafr_teams_scores_set_win$home_Team)/2)+1):length(datafr_teams_scores_set_win$home_Team)],
 away_sets=datafr_teams_scores_set_win$away_score[((length(datafr_teams_scores_set_win$home_Team)/2)+1):length(datafr_teams_scores_set_win$home_Team)],
-home_team=as.numeric(datafr_teams_scores_set_win$home_Team[((length(datafr_teams_scores_set_win$home_Team)/2)+1):length(datafr_teams_scores_set_win$home_Team)]),
-away_team=as.numeric(datafr_teams_scores_set_win$away_Team[((length(datafr_teams_scores_set_win$home_Team)/2)+1):length(datafr_teams_scores_set_win$home_Team)]))
+home_team=as.numeric(factor(datafr_teams_scores_set_win$home_Team[((length(datafr_teams_scores_set_win$home_Team)/2)+1):length(datafr_teams_scores_set_win$home_Team)])),
+away_team=as.numeric(factor(datafr_teams_scores_set_win$away_Team[((length(datafr_teams_scores_set_win$home_Team)/2)+1):length(datafr_teams_scores_set_win$home_Team)])))
 #-------------------------------------------------------------------------------------------------------------------------------
 ########-------------- 1) ZDTS (Paper v1)--------------#################
 

@@ -48,8 +48,8 @@ train_dataList<-list(n_teams=length(teams_names),n_games=length(datafr_teams_sco
 				length(semi_train_home_team),
                      home_sets=c(datafr_teams_scores_set_win$home_score,quarter_train_home_sets,semi_train_home_sets),
                      away_sets=c(datafr_teams_scores_set_win$away_score,quarter_train_away_sets,semi_train_away_sets),
-                     home_team=c(as.numeric(datafr_teams_scores_set_win$home_Team),quarter_train_home_team,semi_train_home_team),
-                     away_team=c(as.numeric(datafr_teams_scores_set_win$away_Team),quarter_train_away_team,semi_train_away_team))
+                     home_team=c(as.numeric(factor(datafr_teams_scores_set_win$home_Team)),quarter_train_home_team,semi_train_home_team),
+                     away_team=c(as.numeric(factor(datafr_teams_scores_set_win$away_Team)),quarter_train_away_team,semi_train_away_team))
 
 
 
@@ -263,7 +263,8 @@ number_correct_qualif[observ_qualified_teams]
 percen_qualif<-number_correct_qualif[observ_qualified_teams]/T
 total_percen_correct_qualification<-sum(percen_qualif)/length(observ_qualified_teams)
 
- return(list(percentage_qualified_teams=percen_qualif,
+ return(list(percentage_qualified_teams=percen_qualif,teams_predicted_qualification=number_correct_qualif/T,
+             
 			total_percentage_qualification=total_percen_correct_qualification))
 
 }
@@ -276,3 +277,6 @@ Finals_results_ZDTS<-Finals_prediction_ZDTS(train_dataset,test_dataset,
 			Finals_Final_ZDTS_paper.v1,observ_qualified_teams)
 		
 	Finals_results_ZDTS$total_percentage_qualification  ###11,38%
+	Finals_results_ZDTS$teams_predicted_qualification## Paok probability of qualification (wins the championship)
+
+	

@@ -29,13 +29,13 @@ dif_sets=datafr_teams_scores_set_win$home_score-datafr_teams_scores_set_win$away
 
 train_dataList_new<-list(n_teams=12,n_games=length(datafr_teams_scores_set_win$home_Team)/2,
 dif_sets=datafr_teams_scores_set_win$home_score[1:(length(datafr_teams_scores_set_win$home_Team)/2)]-datafr_teams_scores_set_win$away_score[1:(length(datafr_teams_scores_set_win$home_Team)/2)],
-home_team=as.numeric(datafr_teams_scores_set_win$home_Team[1:(length(datafr_teams_scores_set_win$home_Team)/2)]),
-away_team=as.numeric(datafr_teams_scores_set_win$away_Team[1:(length(datafr_teams_scores_set_win$home_Team)/2)]))
+home_team=as.numeric(factor(datafr_teams_scores_set_win$home_Team[1:(length(datafr_teams_scores_set_win$home_Team)/2)])),
+away_team=as.numeric(factor(datafr_teams_scores_set_win$away_Team[1:(length(datafr_teams_scores_set_win$home_Team)/2)])))
 
 test_dataList_new<-list(n_teams=12,n_games=length(datafr_teams_scores_set_win$home_Team)/2,
 dif_sets=datafr_teams_scores_set_win$home_score[(length(datafr_teams_scores_set_win$home_Team)/2+1):length(datafr_teams_scores_set_win$home_Team)]-datafr_teams_scores_set_win$away_score[(length(datafr_teams_scores_set_win$home_Team)/2+1):length(datafr_teams_scores_set_win$home_Team)],
-home_team=as.numeric(datafr_teams_scores_set_win$home_Team[(length(datafr_teams_scores_set_win$home_Team)/2+1):length(datafr_teams_scores_set_win$home_Team)]),
-away_team=as.numeric(datafr_teams_scores_set_win$away_Team[(length(datafr_teams_scores_set_win$home_Team)/2+1):length(datafr_teams_scores_set_win$home_Team)]))
+home_team=as.numeric(factor(datafr_teams_scores_set_win$home_Team[((length(datafr_teams_scores_set_win$home_Team)/2)+1):length(datafr_teams_scores_set_win$home_Team)])),
+away_team=as.numeric(factor(datafr_teams_scores_set_win$away_Team[((length(datafr_teams_scores_set_win$home_Team)/2)+1):length(datafr_teams_scores_set_win$home_Team)])))
 
 #######---------- Proper recoding of response variable (ordinality) in both training and test sets
 for (i in 1:train_dataList_new$n_games) {

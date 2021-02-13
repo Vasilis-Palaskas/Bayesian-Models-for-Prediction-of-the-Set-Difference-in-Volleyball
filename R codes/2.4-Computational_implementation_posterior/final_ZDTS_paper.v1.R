@@ -11,8 +11,8 @@ library(plyr)
 library(bayesplot)
 library(BayesianTools)##For DIC
 library(coda)##For convergence diagnostics
-
-
+library(gridExtra)
+library(grid)
 ##Load some proper datasets
 
 #load(file.choose())#/Data/new_volley
@@ -132,7 +132,7 @@ defense_final_ZDTS_paper.v1_means<-apply(defense_final_ZDTS_paper.v1,2,mean) ##
 overall_final_ZDTS_paper.v1_means<-apply(overall_final_ZDTS_paper.v1,2,mean) ##
 
 attack_order_final_ZDTS_paper.v1<-order(attack_final_ZDTS_paper.v1_means,decreasing=T)
-defense_order_final_ZDTS_paper.v1<-order(defense_final_ZDTS_paper.v1_means,decreasing=T)
+defense_order_final_ZDTS_paper.v1<-order(defense_final_ZDTS_paper.v1_means,decreasing=F)
 overall_order_final_ZDTS_paper.v1<-order(overall_final_ZDTS_paper.v1_means,decreasing=T)
 
 

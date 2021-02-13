@@ -2,8 +2,7 @@
 
 #Read and further processing of the data
 
-#
-volley<-read.csv(file.choose(),header=T)#Load Data\Final_Regular_Season_data.csv
+volley<-read.csv(file.choose(),header=T)#Load Data\Final_Regular_Season_data_new.csv
 head(volley,30)
 is.data.frame(volley)
 colnames(volley)[3]<-"home_team"

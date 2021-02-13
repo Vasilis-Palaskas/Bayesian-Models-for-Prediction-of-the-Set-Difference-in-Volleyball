@@ -26,8 +26,8 @@ source(file.choose())#\R Codes\4.3- Goodness of fit model comparison\In Sample D
 	#load(file.choose())#/Output/MAD Comparison (In and Out of Sample)/In-Sample/	load(file.choose())#/Output/MAD/In sample Predicted differences (ZDTS)(Multinomial values)
 #multi_pred_differences_out
 
-limits <- c(0, 132)
-breaks <- seq(limits[1], limits[2], by=12)
+limits <- c(0, 50)
+breaks <- seq(limits[1], limits[2], by=10)
 
 # assign common axis to both plots
 # p1.common.y <- p1 + scale_y_continuous(limits=limits, breaks=breaks)

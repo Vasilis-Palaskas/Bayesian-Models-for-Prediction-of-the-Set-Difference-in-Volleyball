@@ -11,8 +11,8 @@ library(plyr)
 library(bayesplot)
 library(BayesianTools)##For DIC
 library(coda)##For convergence diagnostics
-
-
+library(gridExtra)
+library(grid)
 ##Load some proper datasets
 
 #load(file.choose())#/Data/new_volley
@@ -45,8 +45,8 @@ teams_names
 dataList<-list(n_teams=length(teams_names),n_games=length(datafr_teams_scores_set_win$home_score),
 home_sets=datafr_teams_scores_set_win$home_score,
 away_sets=datafr_teams_scores_set_win$away_score,
-home_team=as.numeric(datafr_teams_scores_set_win$home_Team),
-away_team=as.numeric(datafr_teams_scores_set_win$away_Team))
+home_team=as.numeric(factor(datafr_teams_scores_set_win$home_Team)),
+away_team=as.numeric(factor(datafr_teams_scores_set_win$away_Team)))
 
 
 #-------------------------------------------------------------------------------------------------------------------------------
@@ -132,7 +132,7 @@ defense_final_ZDTS_paper.v1_means<-apply(defense_final_ZDTS_paper.v1,2,mean) ##
 overall_final_ZDTS_paper.v1_means<-apply(overall_final_ZDTS_paper.v1,2,mean) ##
 
 attack_order_final_ZDTS_paper.v1<-order(attack_final_ZDTS_paper.v1_means,decreasing=T)
-defense_order_final_ZDTS_paper.v1<-order(defense_final_ZDTS_paper.v1_means,decreasing=T)
+defense_order_final_ZDTS_paper.v1<-order(defense_final_ZDTS_paper.v1_means,decreasing=F)
 overall_order_final_ZDTS_paper.v1<-order(overall_final_ZDTS_paper.v1_means,decreasing=T)
 
 

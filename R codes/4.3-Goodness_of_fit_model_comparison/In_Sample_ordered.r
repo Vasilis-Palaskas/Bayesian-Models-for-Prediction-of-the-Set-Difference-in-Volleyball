@@ -36,8 +36,8 @@ for (i in 1:12) {
 
 dataList_new<-list(n_teams=12,n_games=length(datafr_teams_scores_set_win$home_Team),
                    dif_sets=datafr_teams_scores_set_win$home_score-datafr_teams_scores_set_win$away_score,
-                   home_team=as.numeric(datafr_teams_scores_set_win$home_Team),
-                   away_team=as.numeric(datafr_teams_scores_set_win$away_Team))
+                   home_team=as.numeric(factor(datafr_teams_scores_set_win$home_Team)),
+                   away_team=as.numeric(factor(datafr_teams_scores_set_win$away_Team)))
 
 
 ## Proper recoding of response variable (ordinality property)
@@ -61,8 +61,8 @@ for (i in 1:dataList_new$n_games) {
 
 dataList_new_final<-list(n_teams=12,n_games=132,
                          dif_sets=dataList_new$dif_sets,
-                         home_team=as.numeric(datafr_teams_scores_set_win$home_Team),
-                         away_team=as.numeric(datafr_teams_scores_set_win$away_Team))
+                         home_team=as.numeric(factor(datafr_teams_scores_set_win$home_Team)),
+                         away_team=as.numeric(factor(datafr_teams_scores_set_win$away_Team)))
 
 
 #model<-final_ordered_logistic

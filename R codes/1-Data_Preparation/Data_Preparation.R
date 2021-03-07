@@ -2,8 +2,7 @@
 
 #Read and further processing of the data
 
-#
-volley<-read.csv(file.choose(),header=T)#Load Data\Final_Regular_Season_data.csv
+volley<-read.csv(file.choose(),header=T)#Load Data\Final_Regular_Season_data_new.csv
 head(volley,30)
 is.data.frame(volley)
 colnames(volley)[3]<-"home_team"
@@ -222,3 +221,4 @@ for (i in 1:length(home_Team)){
 
 datafr_teams_scores_set_win<-data.frame(datafr_teams_scores_set,team_win=win_team_match,
 bin_result=match_set_result)
+

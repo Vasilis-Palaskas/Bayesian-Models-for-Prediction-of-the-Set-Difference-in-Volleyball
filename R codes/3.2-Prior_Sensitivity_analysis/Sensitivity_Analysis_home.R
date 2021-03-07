@@ -50,27 +50,27 @@ teams_names
 dataList_c_2<-list(c=2,n_teams=length(teams_names),n_games=length(datafr_teams_scores_set_win$home_score),
 home_sets=datafr_teams_scores_set_win$home_score,
 away_sets=datafr_teams_scores_set_win$away_score,
-home_team=as.numeric(datafr_teams_scores_set_win$home_Team),
-away_team=as.numeric(datafr_teams_scores_set_win$away_Team))
+home_team=as.numeric(factor(datafr_teams_scores_set_win$home_Team)),
+away_team=as.numeric(factor(datafr_teams_scores_set_win$away_Team)))
 
 
 dataList_c_5<-list(c=5,n_teams=length(teams_names),n_games=length(datafr_teams_scores_set_win$home_score),
 home_sets=datafr_teams_scores_set_win$home_score,
 away_sets=datafr_teams_scores_set_win$away_score,
-home_team=as.numeric(datafr_teams_scores_set_win$home_Team),
-away_team=as.numeric(datafr_teams_scores_set_win$away_Team))
+home_team=as.numeric(factor(datafr_teams_scores_set_win$home_Team)),
+away_team=as.numeric(factor(datafr_teams_scores_set_win$away_Team)))
 
 dataList_c_10<-list(c=10,n_teams=length(teams_names),n_games=length(datafr_teams_scores_set_win$home_score),
 home_sets=datafr_teams_scores_set_win$home_score,
 away_sets=datafr_teams_scores_set_win$away_score,
-home_team=as.numeric(datafr_teams_scores_set_win$home_Team),
-away_team=as.numeric(datafr_teams_scores_set_win$away_Team))
+home_team=as.numeric(factor(datafr_teams_scores_set_win$home_Team)),
+away_team=as.numeric(factor(datafr_teams_scores_set_win$away_Team)))
 
 dataList_c_20<-list(c=20,n_teams=length(teams_names),n_games=length(datafr_teams_scores_set_win$home_score),
 home_sets=datafr_teams_scores_set_win$home_score,
 away_sets=datafr_teams_scores_set_win$away_score,
-home_team=as.numeric(datafr_teams_scores_set_win$home_Team),
-away_team=as.numeric(datafr_teams_scores_set_win$away_Team))
+home_team=as.numeric(factor(datafr_teams_scores_set_win$home_Team)),
+away_team=as.numeric(factor(datafr_teams_scores_set_win$away_Team)))
 
 
 # 

@@ -37,8 +37,8 @@ teams_names
 dataList<-list(n_teams=length(teams_names),n_games=length(datafr_teams_scores_set_win$home_score),
 home_sets=datafr_teams_scores_set_win$home_score,
 away_sets=datafr_teams_scores_set_win$away_score,
-home_team=as.numeric(datafr_teams_scores_set_win$home_Team),
-away_team=as.numeric(datafr_teams_scores_set_win$away_Team))
+home_team=as.numeric(factor(datafr_teams_scores_set_win$home_Team)),
+away_team=as.numeric(factor(datafr_teams_scores_set_win$away_Team)))
 
 
 

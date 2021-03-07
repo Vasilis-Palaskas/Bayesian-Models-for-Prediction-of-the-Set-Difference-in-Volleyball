@@ -44,14 +44,14 @@ data<-data.frame(expec_value_used=expec_value_used,expec_value_zdts=expec_value_
 
 p <- ggplot(data = data, aes(x = expec_value_used, y = expec_value_zdts)) +
             geom_smooth(method = "lm", se=FALSE, color="red", formula = y ~ x) +
-            geom_point(color="blue")+scale_x_continuous(name = "E(Æ_Sk)") +
+            geom_point(color="blue")+scale_x_continuous(name = "E(Z_Sk)") +
       scale_y_continuous(name = "E(Z_ZDTS)") 
 p1 <- p + geom_text(x = -1.5, y = 2, label = lm_eqn(data), parse = TRUE,size=6)+
-  theme(axis.text.x = element_text( size = 13, angle = 0, hjust = .5, vjust = .5),
-        axis.text.y = element_text( size = 13, angle = 0, hjust = 1, vjust = 0),  
+  theme(axis.text.x = element_text( size = 6, angle = 0, hjust = .5, vjust = .5),
+        axis.text.y = element_text( size = 6, angle = 0, hjust = 1, vjust = 0),  
         axis.title.x = element_text( size =rel(2), angle = 0, hjust = .5, vjust = 0),
         axis.title.y = element_text( size = rel(2), angle = 90, hjust = .5, vjust= 0),
-        plot.title  =element_text( size = 10))
+        plot.title  =element_text( size = 6))
 
 ggsave(file="new2_Exp_zdts_3.png",p1,width=195,units="mm")
 p1

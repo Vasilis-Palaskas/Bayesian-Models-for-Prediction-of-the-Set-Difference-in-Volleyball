@@ -10,7 +10,7 @@ library(xtable)
 library(plyr)
 library(bayesplot)
 library(coda)##For convergence diagnostics
-
+library(brms)
 
 ##Load some proper datasets
 
@@ -69,6 +69,26 @@ dif_sets=dataList_new$dif_sets,
 home_team=as.numeric(factor(datafr_teams_scores_set_win$home_Team)),
 away_team=as.numeric(factor(datafr_teams_scores_set_win$away_Team)))
 
+
+dataList_new_final<-data.frame(
+                         dif_sets=dataList_new$dif_sets,
+                         home_team=factor(datafr_teams_scores_set_win$home_Team),
+                         away_team=factor(datafr_teams_scores_set_win$away_Team))
+
+##----Define the negative sign
+dataList_new_final$w1 <- rep(1, dim(dataList_new_final)[1])
+dataList_new_final$w2 <- rep(-1, dim(dataList_new_final)[1])
+FP_generic_Ordered_priors <- c(prior_string("normal(0,10)", class = "b"))
+
+final_ordered_logistic<-stan(file.choose(),data=dataList_new_final,chains=3,
+                             thin=2,cores=3,
+                             iter=16000,warmup=4000)#Stan codes/Ordered_paper.v1.stan
+
+FP_ordered<-brm(dif_sets ~ (1|mm(home_team, away_team, weights = cbind(w1, w2),scale=F)),
+                 data =dataList_new_final,     family = cumulative(link = "logit", threshold = "flexible"),
+                iter=16000,warmup=4000,chains =3, thin=2,
+                inits  = "random",cores  = 3)#6524.7
+launch_shinystan(FP_ordered)
 #-------------------------------------------------------------------------------------------------------------------------------
 ########-------------- 1) Final Ordered Logistic--------------#################
 
